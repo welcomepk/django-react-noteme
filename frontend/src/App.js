@@ -21,8 +21,6 @@ function App() {
           <Header />
           <Route path="/" component={NotesListScreen} exact />
           <Route path="/notes/:id" component={NotePage} exact />
-
-
           {/* <Route path="/" exact>
           <NotesListScreen />
         </Route> */}

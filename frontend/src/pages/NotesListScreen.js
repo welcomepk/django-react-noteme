@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NoteItem from '../components/NoteItem';
+import AddButton from '../components/AddButton';
 
 const NotesListScreen = () => {
 
@@ -30,6 +31,7 @@ const NotesListScreen = () => {
 
                 )}
             </div>
+            <AddButton />
         </div>
     )
 }

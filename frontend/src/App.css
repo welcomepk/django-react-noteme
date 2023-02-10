@@ -192,6 +192,10 @@ a {
   fill: var(--color-bg);
 }
 
+.update-floating-button > svg {
+  width : 70% !important;
+}
+
 
 
 /*==============================
