@@ -11,6 +11,7 @@ from django.shortcuts import get_object_or_404
 
 @ensure_csrf_cookie
 def get_csrf(request):
+    print(request.COOKIES.get('csrftoken'))
     return JsonResponse({'csrfToken': request.COOKIES.get('csrftoken')})
 
 

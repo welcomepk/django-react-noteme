@@ -7,6 +7,7 @@ const NotesListScreen = () => {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
+        console.log("list is mounted")
         getNotes();
     }, []);
 

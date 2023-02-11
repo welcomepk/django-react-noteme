@@ -18,6 +18,9 @@ __pycache__/
 # data
 *.dump
 
+# production
+/build
+
 # npm
 node_modules/
 npm-debug.log

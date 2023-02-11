@@ -18,7 +18,7 @@ const NotePage = ({ match, history }) => {
             getNote();
 
         const fetchCsrfToken = async () => {
-            const response = await fetch("http://localhost:8000/api/csrf/");
+            const response = await fetch("/api/csrf/");
 
             if (!response.ok) {
                 throw new Error("Request failed");
@@ -26,6 +26,7 @@ const NotePage = ({ match, history }) => {
 
             const data = await response.json();
             setCsrfToken(data.csrf_token);
+            console.log("CSRF_TOKEN : ", data.csrf_token)
         };
 
         fetchCsrfToken();
@@ -64,6 +65,7 @@ const NotePage = ({ match, history }) => {
         }
 
         const data = await response.json();
+        history.push("/");
         console.log(data);
     }
 
@@ -83,6 +85,7 @@ const NotePage = ({ match, history }) => {
         }
 
         const data = await response.json();
+        history.push("/");
         console.log(data);
 
     }
@@ -99,6 +102,8 @@ const NotePage = ({ match, history }) => {
         if (!response.ok) {
             // history.push("/");
             throw new Error("Request failed");
+        } else {
+            history.push("/");
         }
     }
 
@@ -106,7 +111,6 @@ const NotePage = ({ match, history }) => {
         if (noteId !== 'new') {
             deleteNote();
         }
-        history.push("/");
     }
 
     const handleCreate = () => {
@@ -116,14 +120,11 @@ const NotePage = ({ match, history }) => {
             alert("Plz add something to create a Note ...")
             return;
         }
-        history.push("/");
     }
     const handleUpdate = () => {
         if (noteId !== 'new') {
             updateNote();
         }
-        history.push("/");
-
     }
 
 
